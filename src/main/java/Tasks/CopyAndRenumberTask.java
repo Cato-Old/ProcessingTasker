@@ -1,0 +1,1 @@
+package Tasks;import javafx.concurrent.Task;import javafx.scene.control.TextArea;public class CopyAndRenumberTask extends ProcessingTask {    public CopyAndRenumberTask(TextArea consoleTextArea) {        super(consoleTextArea);    }    @Override    public Task<Void> task() {        return null;    }}
