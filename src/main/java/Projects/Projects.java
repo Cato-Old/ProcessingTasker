@@ -1,1 +1,0 @@
-package Projects;import java.util.ArrayList;import java.util.List;public class Projects {    private List<Project> projectList = new ArrayList<>();    public void addProject(Project project){        projectList.add(project);    }}
