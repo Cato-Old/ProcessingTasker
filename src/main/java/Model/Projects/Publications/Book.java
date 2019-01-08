@@ -1,1 +1,1 @@
-package Model.Projects.Publications;public class Book extends Publication{}
+package Model.Projects.Publications;public class Book extends Publication{    public Book(String name){        super(name);    }}
