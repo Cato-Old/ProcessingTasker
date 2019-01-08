@@ -1,0 +1,1 @@
+package Model.Projects;public interface ProjectItem {    public String getName();}

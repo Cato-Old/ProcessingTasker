@@ -1,1 +1,0 @@
-package Model.Publications;public class Book extends Publication{}
