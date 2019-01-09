@@ -1,0 +1,1 @@
+package View;public enum ViewElement {    PUBLICATION_TREE, PROJECT_PANE}
