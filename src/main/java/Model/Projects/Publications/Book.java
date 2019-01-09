@@ -1,1 +1,1 @@
-package Model.Projects.Publications;public class Book extends Publication{    public Book(String name){        super(name);    }}
+package Model.Projects.Publications;import Model.Projects.Project;import java.nio.file.Path;public class Book extends Publication{    public Book(String name, Path sourcePath, Project project){        super(name, sourcePath, project);    }}
