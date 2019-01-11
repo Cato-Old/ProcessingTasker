@@ -1,0 +1,1 @@
+package View.GUI.CenterPane;import Controller.Controller;public abstract class CenterPane {    Controller controller;    public CenterPane(Controller controller){        this.controller = controller;    }}

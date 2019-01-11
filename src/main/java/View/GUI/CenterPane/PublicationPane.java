@@ -1,0 +1,1 @@
+package View.GUI.CenterPane;import Controller.Controller;import Model.Projects.Publications.Publication;import javafx.scene.layout.GridPane;public class PublicationPane extends CenterPane{    private GridPane pubPane;    public PublicationPane(Controller controller){        super(controller);    }    public void update(Publication pub){    }}
