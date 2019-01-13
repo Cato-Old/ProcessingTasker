@@ -7,6 +7,7 @@ import Model.Tasks.CopyAndRenumberTask;
 import Model.Tasks.ProcessTask;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -98,15 +99,13 @@ public class CenterPane {
     public void update(Publication pub){
         taskComboBox = new TaskComboBox();
         taskComboBox.create();
-        Label sourcePathLab = new Label("Path to source directory: ");
-        Label sourcePathVal = new Label(pub.getSourcePath().toString());
-        Label targetPathLab = new Label("Path to target directory: ");
-        Label targetPathVal = new Label(Optional.ofNullable(pub.getTargetPath())
-                                                .map(Path::toString)
-                                                .orElse("..."));
-        Label currStatusLab = new Label("Current processing status: ");
-        Label currStatusVal = new Label(pub.getState().getLabel());
-        Label procTaskerLab = new Label("Select task to carry out: ");
+        List<Node> nodes = Arrays.asList(
+                new Label("Path to source directory: "), new Label(pub.getSourcePath().toString()),
+                new Label("Path to target directory: "), new Label(Optional.ofNullable(pub.getTargetPath())
+                                                                           .map(Path::toString)
+                                                                           .orElse("...")),
+                new Label("Current processing status: "), new Label(pub.getState().getLabel()),
+                new Label("Select task to carry out: "), taskComboBox.view);
         centerPane.getChildren().removeIf(Objects::nonNull);
         centerPane.getColumnConstraints().removeIf(Objects::nonNull);
         centerPane.getRowConstraints().removeIf(Objects::nonNull);
@@ -116,19 +115,11 @@ public class CenterPane {
         col1.setPercentWidth(40);
         col2.setPercentWidth(40);
         col3.setPercentWidth(20);
-        GridPane.setConstraints(sourcePathLab, 0, 0, 1, 1);
-        GridPane.setConstraints(sourcePathVal, 1, 0, 1, 1);
-        GridPane.setConstraints(targetPathLab, 0, 1, 1, 1);
-        GridPane.setConstraints(targetPathVal, 1, 1, 1, 1);
-        GridPane.setConstraints(currStatusLab, 0, 2, 1, 1);
-        GridPane.setConstraints(currStatusVal, 1, 2, 1, 1);
-        GridPane.setConstraints(procTaskerLab, 0, 3, 1, 1);
-        GridPane.setConstraints(taskComboBox.view, 1,3,1,1);
+        for (int i = 0, row = 0, col = 0; i < nodes.size(); i++, row = i / 2, col = i % 2) {
+            GridPane.setConstraints(nodes.get(i), col, row);
+        }
         centerPane.getColumnConstraints().addAll(col1, col2, col3);
-        centerPane.getChildren().addAll(sourcePathLab, sourcePathVal,
-                                        targetPathLab, targetPathVal,
-                                        currStatusLab, currStatusVal,
-                                        procTaskerLab, taskComboBox.view);
+        centerPane.getChildren().addAll(nodes);
     }
 
     public void update(){

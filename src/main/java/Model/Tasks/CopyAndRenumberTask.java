@@ -3,8 +3,6 @@ package Model.Tasks;
 import Model.Projects.Publications.Publication;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
-import javafx.util.StringConverter;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
