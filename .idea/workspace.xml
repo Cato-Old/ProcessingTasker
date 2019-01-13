@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="366e50ec-9af1-4e48-8e38-cac1c832d0f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/View/GUI/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/GUI/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -24,49 +23,49 @@
     <session id="-389259467">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.40" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="47" />
+          <entry key="java" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="47" />
+          <entry key="JAVA" value="48" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="11" />
-          <entry key="java" value="16246" />
-          <entry key="txt" value="1005" />
+          <entry key="java" value="17004" />
+          <entry key="txt" value="1116" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="16246" />
-          <entry key="PLAIN_TEXT" value="1016" />
+          <entry key="JAVA" value="17004" />
+          <entry key="PLAIN_TEXT" value="1127" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/TaskList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="47" selection-start-line="47" selection-end-line="47" />
+            <state relative-caret-position="357">
+              <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Publications/Publication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+            <state relative-caret-position="595">
+              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -87,10 +86,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Publications/State.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/View.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+            <state relative-caret-position="1666">
+              <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+            <state relative-caret-position="119">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -113,12 +121,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="52" selection-start-line="47" selection-end-line="52" />
+            <state relative-caret-position="1564">
+              <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#Tree#0;class#PublicationTree#0" />
-                <element signature="class#MenuOnClick#0;class#PublicationTree#0" />
                 <element signature="method#create#0;class#MenuOnClick#0;class#PublicationTree#0" />
               </folding>
             </state>
@@ -128,24 +134,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="136">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#306#307#0" expanded="true" />
-                <element signature="e#344#345#0" expanded="true" />
-                <element signature="e#401#1111#0" expanded="true" />
-                <element signature="e#1110#1111#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state relative-caret-position="112">
+              <caret line="35" column="81" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,7 +158,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="778">
+            <state relative-caret-position="833">
               <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -168,30 +170,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Project.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+            <state relative-caret-position="595">
+              <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#467#468#0" expanded="true" />
                 <element signature="e#494#495#0" expanded="true" />
-                <element signature="e#597#598#0" expanded="true" />
-                <element signature="e#630#631#0" expanded="true" />
-                <element signature="e#876#877#0" expanded="true" />
-                <element signature="e#914#915#0" expanded="true" />
-                <element signature="e#1229#1230#0" expanded="true" />
-                <element signature="e#1279#1280#0" expanded="true" />
-                <element signature="e#1325#1326#0" expanded="true" />
-                <element signature="e#1352#1353#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/View/ViewElement.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -533,22 +518,23 @@
         <option value="$PROJECT_DIR$/src/main/java/Model/Projects/Publications/Book.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Model.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Tasks/Task.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/ProjectPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/PublicationPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane/PublicationPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane/ProjectPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane/CenterPane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Projects/Publications/Publication.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Projects/ProjectItem.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/ViewElement.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/View.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Projects/Project.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/TaskList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Projects/Publications/State.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Model/Projects/Publications/Publication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java" />
       </list>
     </option>
   </component>
@@ -680,7 +666,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547323253530" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547368196749" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -892,7 +878,21 @@
       <option name="project" value="LOCAL" />
       <updated>1547319003574</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Adding menu for the TaskList class.">
+      <created>1547323495176</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1547323495176</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Adding displaying of the publication's current processing status.">
+      <created>1547327882319</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1547327882319</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -908,7 +908,7 @@
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21946308" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2261745" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -922,8 +922,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32885906" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32885906" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.25100672" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32885906" />
@@ -1005,7 +1005,9 @@
     <MESSAGE value="Merge ProjectPane and PublicationPane into CenterPane concrete class." />
     <MESSAGE value="Adding CenterPane view for Publication class." />
     <MESSAGE value="Adding autocompletion the target path for publication from project." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding autocompletion the target path for publication from project." />
+    <MESSAGE value="Adding menu for the TaskList class." />
+    <MESSAGE value="Adding displaying of the publication's current processing status." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding displaying of the publication's current processing status." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Task.java" />
@@ -1017,13 +1019,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Publications/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Projects.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/event/Event.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1058,9 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1100,84 +1092,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/TaskList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Publications/Publication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+        <state relative-caret-position="595">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Project.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Publications/State.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="41" column="51" lean-forward="true" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#467#468#0" expanded="true" />
-            <element signature="e#494#495#0" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#630#631#0" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#914#915#0" expanded="true" />
-            <element signature="e#1229#1230#0" expanded="true" />
-            <element signature="e#1279#1280#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1352#1353#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="98" column="9" lean-forward="true" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
+        <state relative-caret-position="1666">
+          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="26" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#306#307#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#401#1111#0" expanded="true" />
-            <element signature="e#1110#1111#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+        <state relative-caret-position="119">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1186,21 +1141,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="52" selection-start-line="47" selection-end-line="52" />
+        <state relative-caret-position="1564">
+          <caret line="92" column="29" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#Tree#0;class#PublicationTree#0" />
-            <element signature="class#MenuOnClick#0;class#PublicationTree#0" />
             <element signature="method#create#0;class#MenuOnClick#0;class#PublicationTree#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/TaskList.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Tasks/CopyAndRenumberTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="47" selection-start-line="47" selection-end-line="47" />
+        <state relative-caret-position="136">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="52" column="21" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Projects/Project.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="41" column="51" selection-start-line="41" selection-start-column="51" selection-end-line="41" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="35" column="81" selection-start-line="35" selection-start-column="81" selection-end-line="35" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
