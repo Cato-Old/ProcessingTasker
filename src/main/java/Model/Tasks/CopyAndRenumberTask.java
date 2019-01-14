@@ -13,6 +13,10 @@ public class CopyAndRenumberTask extends ProcessTask {
         super();
     }
 
+    public String getLabel(){
+        return label;
+    }
+
     public CopyAndRenumberTask(Publication publication) {
         super(publication);
     }

@@ -5,7 +5,7 @@ import Model.Projects.Project;
 import Model.Projects.Publications.Publication;
 import Model.Tasks.CopyAndRenumberTask;
 import Model.Tasks.ProcessTask;
-import javafx.concurrent.Task;
+import View.GUI.StringConverters.ComboBoxStringConverter;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
@@ -42,23 +42,7 @@ public class CenterPane {
             view.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 selected = newValue;
                 });
-            view.setConverter(new StringConverter<Class<ProcessTask>>() {
-                @Override
-                public String toString(Class<ProcessTask> object) {
-                    String result;
-                    try {
-                        result = (String) object.getDeclaredField("label").get(null);
-                    } catch (Exception e) {
-                        result = "To be implemented";
-                    }
-                    return result;
-                }
-
-                @Override
-                public Class<ProcessTask> fromString(String string) {
-                    return null;
-                }
-            });
+            view.setConverter(new ComboBoxStringConverter());
         }
     }
 

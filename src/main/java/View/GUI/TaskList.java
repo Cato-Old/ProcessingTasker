@@ -2,8 +2,10 @@ package View.GUI;
 
 import Controller.Controller;
 import Model.Tasks.ProcessTask;
+import View.GUI.StringConverters.TaskListViewStringConverter;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.cell.TextFieldListCell;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -44,6 +46,10 @@ public class TaskList {
         menu.create();
         list = new ListView<>();
         list.getItems().addAll(tasks);
+        list.setCellFactory(l -> {
+            TextFieldListCell<ProcessTask> lc = new TextFieldListCell<>();
+            lc.setConverter(new TaskListViewStringConverter());
+            return lc;});
         VBox.setVgrow(list, ALWAYS);
         return new VBox(list,menu.box);
     }
