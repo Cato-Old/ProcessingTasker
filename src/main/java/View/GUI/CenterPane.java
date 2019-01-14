@@ -5,6 +5,7 @@ import Model.Projects.Project;
 import Model.Projects.Publications.Publication;
 import Model.Tasks.CopyAndRenumberTask;
 import Model.Tasks.ProcessTask;
+import javafx.concurrent.Task;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
@@ -31,7 +32,7 @@ public class CenterPane {
 
     class TaskComboBox{
         ComboBox<Class<ProcessTask>> view;
-        ProcessTask selected;
+        Class<ProcessTask> selected;
 
         void create(){
             view = new ComboBox<>();
@@ -39,11 +40,7 @@ public class CenterPane {
             taskListClass.stream()
                     .forEach(e -> view.getItems().add(e));
             view.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
-                try {
-                    selected = newValue.newInstance();
-                } catch (Exception e){
-                    e.printStackTrace();
-                }
+                selected = newValue;
                 });
             view.setConverter(new StringConverter<Class<ProcessTask>>() {
                 @Override
@@ -108,7 +105,13 @@ public class CenterPane {
                 new Label("Current processing status: "), new Label(pub.getState().getLabel()),
                 new Label("Select task to carry out: "), taskComboBox.view);
         Button selTaskButton = new Button("Select");
-
+        selTaskButton.setOnAction(evt -> {
+            try {
+                controller.addTask(taskComboBox.selected, pub);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        });
         centerPane.getChildren().removeIf(Objects::nonNull);
         centerPane.getColumnConstraints().removeIf(Objects::nonNull);
         centerPane.getRowConstraints().removeIf(Objects::nonNull);

@@ -1,1 +1,1 @@
-package View;public enum ViewElement {    PUBLICATION_TREE, CENTER_PANE,}
+package View;public enum ViewElement {    PUBLICATION_TREE, CENTER_PANE, TASK_LIST}

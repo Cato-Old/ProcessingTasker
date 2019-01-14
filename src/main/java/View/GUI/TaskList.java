@@ -15,7 +15,7 @@ import static javafx.scene.layout.Priority.ALWAYS;
 public class TaskList {
     Controller controller;
 
-    private Menu menu;
+    private Menu menu; ListView<ProcessTask> list;
 
     public TaskList(Controller controller){
         this.controller = controller;
@@ -42,8 +42,13 @@ public class TaskList {
 
     public Pane create(List<ProcessTask> tasks) {
         menu.create();
-        ListView<ProcessTask> list = new ListView<>();
+        list = new ListView<>();
+        list.getItems().addAll(tasks);
         VBox.setVgrow(list, ALWAYS);
         return new VBox(list,menu.box);
+    }
+
+    public void update(List<ProcessTask> tasks) {
+        list.getItems().addAll(tasks);
     }
 }
