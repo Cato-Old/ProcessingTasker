@@ -38,6 +38,13 @@ public class CenterPane {
             List<Class> taskListClass = Arrays.asList(CopyAndRenumberTask.class);
             taskListClass.stream()
                     .forEach(e -> view.getItems().add(e));
+            view.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                try {
+                    selected = newValue.newInstance();
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+                });
             view.setConverter(new StringConverter<Class<ProcessTask>>() {
                 @Override
                 public String toString(Class<ProcessTask> object) {
@@ -100,14 +107,18 @@ public class CenterPane {
                                                                            .orElse("...")),
                 new Label("Current processing status: "), new Label(pub.getState().getLabel()),
                 new Label("Select task to carry out: "), taskComboBox.view);
+        Button selTaskButton = new Button("Select");
+
         centerPane.getChildren().removeIf(Objects::nonNull);
         centerPane.getColumnConstraints().removeIf(Objects::nonNull);
         centerPane.getRowConstraints().removeIf(Objects::nonNull);
         for (int i = 0, row = 0, col = 0; i < nodes.size(); i++, row = i / 2, col = i % 2) {
             GridPane.setConstraints(nodes.get(i), col, row);
         }
+        GridPane.setConstraints(selTaskButton, 2,3);
         centerPane.getColumnConstraints().addAll(getColumnConstraintsList(40, 40, 20));
         centerPane.getChildren().addAll(nodes);
+        centerPane.getChildren().add(selTaskButton);
     }
 
     public void update(){

@@ -9,6 +9,10 @@ import java.io.InputStreamReader;
 public class CopyAndRenumberTask extends ProcessTask {
     public static String label = "Copy and Renumber";
 
+    public CopyAndRenumberTask(){
+        super();
+    }
+
     public CopyAndRenumberTask(Publication publication) {
         super(publication);
     }
