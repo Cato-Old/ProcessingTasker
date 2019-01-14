@@ -81,18 +81,12 @@ public class CenterPane {
         centerPane.getChildren().removeIf(Objects::nonNull);
         centerPane.getColumnConstraints().removeIf(Objects::nonNull);
         centerPane.getRowConstraints().removeIf(Objects::nonNull);
-        ColumnConstraints col1 = new ColumnConstraints();
-        ColumnConstraints col2 = new ColumnConstraints();
-        ColumnConstraints col3 = new ColumnConstraints();
-        col1.setPercentWidth(40);
-        col2.setPercentWidth(40);
-        col3.setPercentWidth(20);
-        GridPane.setConstraints(sourcePathLab, 0, 0, 1, 1);
-        GridPane.setConstraints(sourcePathVal, 1, 0, 1, 1);
-        GridPane.setConstraints(targetPathLab, 0, 1, 1, 1);
-        GridPane.setConstraints(targetPathVal, 1, 1, 1, 1);
+        GridPane.setConstraints(sourcePathLab, 0, 0);
+        GridPane.setConstraints(sourcePathVal, 1, 0);
+        GridPane.setConstraints(targetPathLab, 0, 1);
+        GridPane.setConstraints(targetPathVal, 1, 1);
         GridPane.setConstraints(targetPathSet, 2, 1, 1, 1);
-        centerPane.getColumnConstraints().addAll(col1, col2, col3);
+        centerPane.getColumnConstraints().addAll(getColumnConstraintsList(40, 40, 20));
         centerPane.getChildren().addAll(sourcePathLab, sourcePathVal, targetPathLab, targetPathVal, targetPathSet);
     }
 
@@ -109,16 +103,10 @@ public class CenterPane {
         centerPane.getChildren().removeIf(Objects::nonNull);
         centerPane.getColumnConstraints().removeIf(Objects::nonNull);
         centerPane.getRowConstraints().removeIf(Objects::nonNull);
-        ColumnConstraints col1 = new ColumnConstraints();
-        ColumnConstraints col2 = new ColumnConstraints();
-        ColumnConstraints col3 = new ColumnConstraints();
-        col1.setPercentWidth(40);
-        col2.setPercentWidth(40);
-        col3.setPercentWidth(20);
         for (int i = 0, row = 0, col = 0; i < nodes.size(); i++, row = i / 2, col = i % 2) {
             GridPane.setConstraints(nodes.get(i), col, row);
         }
-        centerPane.getColumnConstraints().addAll(col1, col2, col3);
+        centerPane.getColumnConstraints().addAll(getColumnConstraintsList(40, 40, 20));
         centerPane.getChildren().addAll(nodes);
     }
 
@@ -139,5 +127,17 @@ public class CenterPane {
         centerPane.getRowConstraints().add(row);
         GridPane.setConstraints(noProjectLab, 0, 0, 1, 1, HPos.CENTER, VPos.CENTER);
         centerPane.getChildren().add(noProjectLab);
+    }
+
+    private List<ColumnConstraints> getColumnConstraintsList(int...args){
+        ColumnConstraints[] colConstraintsArr = new ColumnConstraints[args.length];
+        for (int i = 0; i < args.length; i++){
+            colConstraintsArr[i] = new ColumnConstraints();
+        }
+        List<ColumnConstraints> colConstsraintsList = Arrays.asList(colConstraintsArr);
+        for (int i = 0; i < args.length; i++) {
+            colConstsraintsList.get(i).setPercentWidth(args[i]);
+        }
+        return colConstsraintsList;
     }
 }
