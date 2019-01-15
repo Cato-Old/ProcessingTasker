@@ -34,6 +34,9 @@ public class TaskList {
         void create(){
             runningTaskQueue.setPrefWidth(200);
             stopingTaskQueue.setPrefWidth(200);
+            runningTaskQueue.setOnAction(e ->{
+                controller.runTaskQueue();
+            });
             HBox.setHgrow(runningTaskQueue, ALWAYS);
             HBox.setHgrow(stopingTaskQueue, ALWAYS);
             this.box = new HBox(runningTaskQueue, stopingTaskQueue);

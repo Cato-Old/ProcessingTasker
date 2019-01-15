@@ -1,6 +1,8 @@
 package Model.Tasks;
 
 import Model.Projects.Publications.Publication;
+import View.View;
+import com.sun.javafx.application.PlatformImpl;
 import javafx.application.Platform;
 import javafx.concurrent.Task;
 import java.io.BufferedReader;
@@ -32,7 +34,9 @@ public class CopyAndRenumberTask extends ProcessTask {
                 try (BufferedReader reader = new BufferedReader(new InputStreamReader(proc.getInputStream()))) {
                     while((line = reader.readLine()) != null){
                         final String ln = "\n" + line;
-                        Platform.runLater(()->consoleTextArea.appendText(ln));
+                        Platform.runLater(()-> {
+                            View.logView.appendText(ln);
+                        });
                     }
                 } catch (Exception e){e.printStackTrace();}
                 return null;
