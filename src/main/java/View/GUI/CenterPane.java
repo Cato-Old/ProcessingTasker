@@ -3,8 +3,8 @@ package View.GUI;
 import Controller.Controller;
 import Model.Projects.Project;
 import Model.Projects.Publications.Publication;
-import Model.Tasks.CopyAndRenumberTask;
 import Model.Tasks.ProcessTask;
+import Model.Tasks.ProcessTaskSettings;
 import View.GUI.StringConverters.ComboBoxStringConverter;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
@@ -16,7 +16,6 @@ import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
-import javafx.util.StringConverter;
 
 import java.nio.file.Path;
 import java.util.*;
@@ -31,14 +30,13 @@ public class CenterPane {
     }
 
     class TaskComboBox{
-        ComboBox<Class<ProcessTask>> view;
-        Class<ProcessTask> selected;
+        ComboBox<ProcessTask> view;
+        ProcessTask selected;
 
         void create(){
             view = new ComboBox<>();
-            List<Class> taskListClass = Arrays.asList(CopyAndRenumberTask.class);
-            taskListClass.stream()
-                    .forEach(e -> view.getItems().add(e));
+            List<ProcessTask> taskList = ProcessTaskSettings.getInstance().getDefinedTasks();
+            taskList.forEach(e -> view.getItems().add(e));
             view.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 selected = newValue;
                 });
