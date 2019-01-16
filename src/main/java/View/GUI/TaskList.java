@@ -11,6 +11,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
 import java.util.List;
+import java.util.Objects;
 
 import static javafx.scene.layout.Priority.ALWAYS;
 
@@ -58,6 +59,7 @@ public class TaskList {
     }
 
     public void update(List<ProcessTask> tasks) {
+        list.getItems().removeIf(Objects::nonNull);
         list.getItems().addAll(tasks);
     }
 }
