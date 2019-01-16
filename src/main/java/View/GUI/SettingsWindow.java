@@ -1,15 +1,14 @@
 package View.GUI;
 
 import Model.Tasks.ProcessTask;
-import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -19,17 +18,19 @@ import static javafx.stage.Modality.APPLICATION_MODAL;
 
 public class SettingsWindow {
 
-    TaskTable taskTable;
+    TaskTable table; EditPane pane;
 
     public SettingsWindow(){
-        taskTable = new TaskTable();
+        table = new TaskTable();
+        pane = new EditPane();
     }
 
     public void create(List<ProcessTask> tasks){
         Stage settingsStage = new Stage();
         Pane root = new VBox();
-        taskTable.create(tasks);
-        root.getChildren().addAll(new Label("Hello world"), taskTable.taskTableView);
+        table.create(tasks);
+        pane.create();
+        root.getChildren().addAll(pane.box, table.taskTableView);
         Scene scene = new Scene(root, 400,400);
         settingsStage.setTitle("Processing task settings");
         settingsStage.initModality(APPLICATION_MODAL);
@@ -47,6 +48,16 @@ public class SettingsWindow {
             c2.setCellValueFactory(e -> new SimpleObjectProperty<>(e.getValue().getScriptPath().toString()));
             taskTableView.getItems().addAll(tasks);
             taskTableView.getColumns().addAll(c1, c2);
+        }
+    }
+
+    class EditPane{
+        HBox box;
+
+        void create(){
+            Label taskNameLab = new Label("Task name: ");
+            TextField taskNameVal = new TextField();
+            this.box = new HBox(taskNameLab,taskNameVal);
         }
     }
 }
