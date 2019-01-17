@@ -114,7 +114,7 @@ public class SettingsWindow {
             Button confirmAddButton = new Button("Confirm");
             confirmAddButton.setOnAction(evt -> {
                 try{
-                    controller.addDefinedTask(taskNameVal.getText(), Paths.get(taskPathVal.getText()));
+                    controller.addDefinedTask(taskNameVal.getText(), taskPathVal.getText());
                 } catch (IllegalArgumentException e){
                     View.alertDialog(e.getMessage());
                 }
