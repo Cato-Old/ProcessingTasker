@@ -12,6 +12,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javax.xml.soap.Text;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -70,17 +71,24 @@ public class SettingsWindow {
         void create(){
             Label taskNameLab = new Label("Task name: ");
             TextField taskNameVal = new TextField();
-            this.box = new HBox(taskNameLab,taskNameVal);
+            Label taskPathLab = new Label("Path to the task script: ");
+            TextField taskPathVal = new TextField();
+            this.box = new HBox(taskNameLab, taskNameVal,
+                                taskPathLab, taskPathVal);
         }
 
         void update(){
             Label taskNameLab = new Label("Task name: ");
-            TextField taskNameVal = new TextField();
-            taskNameVal.setText(Optional.ofNullable(table.selected)
-                                        .map(ProcessTask::getLabel)
-                                        .orElse(""));
+            TextField taskNameVal = new TextField(Optional.ofNullable(table.selected)
+                                                          .map(ProcessTask::getLabel)
+                                                          .orElse(""));
+            Label taskPathLab = new Label("Path to the task script: ");
+            TextField taskPathVal = new TextField(Optional.ofNullable(table.selected)
+                                                          .map(e -> e.getScriptPath().toString())
+                                                          .orElse(""));
             box.getChildren().removeIf(Objects::nonNull);
-            box.getChildren().addAll(taskNameLab,taskNameVal);
+            box.getChildren().addAll(taskNameLab, taskNameVal,
+                                     taskPathLab, taskPathVal);
 
         }
     }
