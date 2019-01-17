@@ -12,6 +12,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -33,14 +34,18 @@ public class CenterPane {
         ComboBox<ProcessTask> view;
         ProcessTask selected;
 
-        void create(){
+        void create(List<ProcessTask> taskList){
             view = new ComboBox<>();
-            List<ProcessTask> taskList = ProcessTaskSettings.getInstance().getDefinedTasks();
             taskList.forEach(e -> view.getItems().add(e));
             view.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 selected = newValue;
                 });
             view.setConverter(new ComboBoxStringConverter());
+        }
+
+        void update(List<ProcessTask> taskList){
+            view.getItems().removeIf(Objects::nonNull);
+            taskList.forEach(e -> view.getItems().add(e));
         }
     }
 
@@ -76,9 +81,9 @@ public class CenterPane {
         centerPane.getChildren().addAll(sourcePathLab, sourcePathVal, targetPathLab, targetPathVal, targetPathSet);
     }
 
-    public void update(Publication pub){
+    public void update(Publication pub, List<ProcessTask> taskList){
         taskComboBox = new TaskComboBox();
-        taskComboBox.create();
+        taskComboBox.create(taskList);
         List<Node> nodes = Arrays.asList(
                 new Label("Path to source directory: "), new Label(pub.getSourcePath().toString()),
                 new Label("Path to target directory: "), new Label(Optional.ofNullable(pub.getTargetPath())
@@ -104,6 +109,11 @@ public class CenterPane {
         centerPane.getColumnConstraints().addAll(getColumnConstraintsList(40, 40, 20));
         centerPane.getChildren().addAll(nodes);
         centerPane.getChildren().add(selTaskButton);
+    }
+
+    public void update(List<ProcessTask> taskList){
+        Optional.ofNullable(taskComboBox)
+                .ifPresent(e -> e.update(taskList));
     }
 
     public void update(){
