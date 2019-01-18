@@ -62,7 +62,6 @@ public class SettingsWindow {
             taskTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
                 selected = newValue;
                 contextMenu.selTask = newValue;
-                pane.update();
             }));
         }
 
@@ -75,7 +74,6 @@ public class SettingsWindow {
             taskTableView.getColumns().removeIf(Objects::nonNull);
             taskTableView.getItems().addAll(tasks);
             taskTableView.getColumns().addAll(c1, c2);
-
         }
 
     }
@@ -83,50 +81,50 @@ public class SettingsWindow {
     class EditPane{
         HBox box;
 
+        ProcessTask selTask;
         TextField taskNameVal; TextField taskPathVal;
+        Button okTaskButton; Button cancelButton;
 
         void create(){
             Label taskNameLab = new Label("Task name: ");
             taskNameVal = new TextField();
             Label taskPathLab = new Label("Path to the task script: ");
             taskPathVal = new TextField();
-            Button addTaskButton = new Button("Add task");
-            addTaskButton.setDisable(true);
-            this.box = new HBox(taskNameLab, taskNameVal,
-                                taskPathLab, taskPathVal,
-                                addTaskButton);
-        }
-
-        void update(){
-            Label taskNameLab = new Label("Task name: ");
-            System.out.println(table.selected);
-            TextField taskNameVal = new TextField(Optional.ofNullable(table.selected)
-                                                          .map(ProcessTask::getLabel)
-                                                          .orElse(""));
-            Label taskPathLab = new Label("Path to the task script: ");
-            TextField taskPathVal = new TextField(Optional.ofNullable(table.selected)
-                                                          .map(e -> e.getScriptPath().toString())
-                                                          .orElse(""));
-            Button addTaskButton = new Button("Add task");
-            addTaskButton.setOnAction(e-> {
-                taskNameVal.setText("");
-                taskPathVal.setText("");
-                table.taskTableView.setMouseTransparent(true);
-            });
-            Button confirmAddButton = new Button("Confirm");
-            confirmAddButton.setOnAction(evt -> {
+            okTaskButton = new Button("OK");
+            okTaskButton.setOnAction(evt -> {
+                int ind = Optional.ofNullable(selTask)
+                        .map(e -> controller.remDefinedTask(e))
+                        .orElse(-1);
                 try{
-                    controller.addDefinedTask(taskNameVal.getText(), taskPathVal.getText());
+                    controller.addDefinedTask(taskNameVal.getText(),
+                                              taskPathVal.getText(),
+                                              ind);
                 } catch (IllegalArgumentException e){
                     View.alertDialog(e.getMessage());
                 }
                 table.taskTableView.setMouseTransparent(false);
+                selTask = null;
+                clearAndDisable();
             });
-            box.getChildren().removeIf(Objects::nonNull);
-            box.getChildren().addAll(taskNameLab, taskNameVal,
-                                     taskPathLab, taskPathVal,
-                                     addTaskButton, confirmAddButton);
+            cancelButton = new Button("Cancel");
+            cancelButton.setOnAction(evt -> {
+                table.taskTableView.setMouseTransparent(false);
+                clearAndDisable();
+                selTask = null;
+            });
+            clearAndDisable();
+            this.box = new HBox(taskNameLab, taskNameVal,
+                                taskPathLab, taskPathVal,
+                                okTaskButton, cancelButton);
+        }
 
+        private void clearAndDisable(){
+            okTaskButton.setDisable(true);
+            cancelButton.setDisable(true);
+            taskPathVal.setText("");
+            taskNameVal.setText("");
+            taskNameVal.setDisable(true);
+            taskPathVal.setDisable(true);
         }
     }
 
@@ -138,6 +136,10 @@ public class SettingsWindow {
 
         ContextMenu create(){
             addDefinedTask.setOnAction(e-> {
+                pane.okTaskButton.setDisable(false);
+                pane.cancelButton.setDisable(false);
+                pane.taskNameVal.setDisable(false);
+                pane.taskPathVal.setDisable(false);
                 pane.taskNameVal.setText("");
                 pane.taskPathVal.setText("");
                 table.taskTableView.setMouseTransparent(true);
@@ -146,15 +148,18 @@ public class SettingsWindow {
                 controller.remDefinedTask(selTask);
             });
             edtDefinedTask.setOnAction(e -> {
+                pane.okTaskButton.setDisable(false);
+                pane.cancelButton.setDisable(false);
+                pane.taskPathVal.setDisable(false);
+                pane.taskNameVal.setDisable(false);
                 pane.taskNameVal.setText(selTask.getLabel());
                 pane.taskPathVal.setText(selTask.getScriptPath().toString());
+                pane.selTask = selTask;
                 table.taskTableView.setMouseTransparent(true);
             });
             ContextMenu menuOnClick = new ContextMenu();
             menuOnClick.getItems().addAll(addDefinedTask, remDefinedTask, edtDefinedTask);
             return menuOnClick;
         }
-
-
     }
 }
