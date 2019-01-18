@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="366e50ec-9af1-4e48-8e38-cac1c832d0f3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTaskSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTaskSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -36,38 +35,38 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="113" />
+          <entry key="java" value="114" />
           <entry key="py" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="113" />
+          <entry key="JAVA" value="114" />
           <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="15" />
-          <entry key="java" value="23843" />
-          <entry key="txt" value="2089" />
+          <entry key="java" value="24169" />
+          <entry key="txt" value="2144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="23843" />
-          <entry key="PLAIN_TEXT" value="2104" />
+          <entry key="JAVA" value="24169" />
+          <entry key="PLAIN_TEXT" value="2159" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+            <state relative-caret-position="264">
+              <caret line="87" column="73" selection-start-line="87" selection-start-column="73" selection-end-line="87" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,23 +74,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="116" column="71" selection-start-line="116" selection-start-column="71" selection-end-line="116" selection-end-column="71" />
+            <state relative-caret-position="343">
+              <caret line="145" column="16" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="class#TaskTable#0;class#SettingsWindow#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/javafx-src.zip!/javafx/beans/property/ObjectPropertyBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="147" selection-start-line="147" selection-end-line="147" />
             </state>
           </provider>
         </entry>
@@ -110,6 +101,19 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
               <caret line="2945" selection-start-line="2945" selection-end-line="2945" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#Menu#0;class#PublicationTree#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -524,9 +528,9 @@
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/GUI/CenterPane.java" />
         <option value="$PROJECT_DIR$/src/main/java/View/View.java" />
-        <option value="$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Tasks/ProcessTaskSettings.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/Controller.java" />
+        <option value="$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java" />
       </list>
     </option>
   </component>
@@ -657,7 +661,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547736704544" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547824709707" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -1002,7 +1006,14 @@
       <option name="project" value="LOCAL" />
       <updated>1547736276325</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Implementing validation of the user's path.">
+      <created>1547736835475</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1547736835475</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1032,8 +1043,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3283582" />
-      <window_info anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3283582" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3310719" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.3283582" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3310719" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.25100672" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3283582" />
@@ -1118,8 +1129,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Small fixes." />
-    <MESSAGE value="Stub of Task List class." />
     <MESSAGE value="Stub of PublicationPane and new architecture of CenterPane." />
     <MESSAGE value="Merge ProjectPane and PublicationPane into CenterPane concrete class." />
     <MESSAGE value="Adding CenterPane view for Publication class." />
@@ -1143,7 +1152,9 @@
     <MESSAGE value="Binding value in table with TextField in SettingsWindow." />
     <MESSAGE value="Small fixex in SettingsWindow." />
     <MESSAGE value="Implementing adding ProcessTask to ProcessTaskSettings by user." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing adding ProcessTask to ProcessTaskSettings by user." />
+    <MESSAGE value="Implementing validation of the user's input." />
+    <MESSAGE value="Implementing validation of the user's path." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing validation of the user's path." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1351,17 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1858">
-          <caret line="143" column="37" lean-forward="true" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Menu#0;class#PublicationTree#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/View/View.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1496,22 +1496,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="116" column="71" selection-start-line="116" selection-start-column="71" selection-end-line="116" selection-end-column="71" />
+        <state relative-caret-position="264">
+          <caret line="87" column="73" selection-start-line="87" selection-start-column="73" selection-end-line="87" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/PublicationTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+        <state relative-caret-position="17">
+          <caret line="128" lean-forward="true" selection-start-line="128" selection-end-line="128" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="class#Menu#0;class#PublicationTree#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/View/GUI/SettingsWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="145" column="16" selection-start-line="145" selection-start-column="16" selection-end-line="145" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#TaskTable#0;class#SettingsWindow#0" />
           </folding>
         </state>
       </provider>

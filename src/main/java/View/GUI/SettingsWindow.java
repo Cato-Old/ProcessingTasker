@@ -83,11 +83,13 @@ public class SettingsWindow {
     class EditPane{
         HBox box;
 
+        TextField taskNameVal; TextField taskPathVal;
+
         void create(){
             Label taskNameLab = new Label("Task name: ");
-            TextField taskNameVal = new TextField();
+            taskNameVal = new TextField();
             Label taskPathLab = new Label("Path to the task script: ");
-            TextField taskPathVal = new TextField();
+            taskPathVal = new TextField();
             Button addTaskButton = new Button("Add task");
             addTaskButton.setDisable(true);
             this.box = new HBox(taskNameLab, taskNameVal,
@@ -126,5 +128,30 @@ public class SettingsWindow {
                                      addTaskButton, confirmAddButton);
 
         }
+    }
+
+    class MenuOnClick{
+        MenuItem addDefinedTask = new MenuItem("Add task");
+        MenuItem remDefinedTask = new MenuItem("Remove task");
+        MenuItem edtDefinedTask = new MenuItem("Edit task");
+        ProcessTask selTask;
+
+        ContextMenu create(){
+            addDefinedTask.setOnAction(e-> {
+                pane.taskNameVal.setText("");
+                pane.taskPathVal.setText("");
+                table.taskTableView.setMouseTransparent(true);
+            });
+            remDefinedTask.setOnAction(e ->{
+                ;
+            });
+            edtDefinedTask.setOnAction(e -> {
+                pane.taskNameVal.setText(selTask.getLabel());
+                pane.taskPathVal.setText(selTask.getScriptPath().toString());
+                table.taskTableView.setMouseTransparent(true);
+            });
+        }
+
+
     }
 }
