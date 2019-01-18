@@ -10,9 +10,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
-import javax.xml.soap.Text;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -22,12 +19,13 @@ import static javafx.stage.Modality.APPLICATION_MODAL;
 public class SettingsWindow {
     private Controller controller;
 
-    Stage settingsStage; TaskTable table; EditPane pane;
+    Stage settingsStage; TaskTable table; EditPane pane; MenuOnClick contextMenu;
 
     public SettingsWindow(Controller controller){
         this.controller = controller;
         table = new TaskTable();
         pane = new EditPane();
+        contextMenu = new MenuOnClick();
     }
 
     public void create(List<ProcessTask> tasks){
@@ -60,8 +58,10 @@ public class SettingsWindow {
             c2.setCellValueFactory(e -> new SimpleObjectProperty<>(e.getValue().getScriptPath().toString()));
             taskTableView.getItems().addAll(tasks);
             taskTableView.getColumns().addAll(c1, c2);
+            taskTableView.setContextMenu(contextMenu.create());
             taskTableView.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
                 selected = newValue;
+                contextMenu.selTask = newValue;
                 pane.update();
             }));
         }
@@ -143,13 +143,16 @@ public class SettingsWindow {
                 table.taskTableView.setMouseTransparent(true);
             });
             remDefinedTask.setOnAction(e ->{
-                ;
+                controller.remDefinedTask(selTask);
             });
             edtDefinedTask.setOnAction(e -> {
                 pane.taskNameVal.setText(selTask.getLabel());
                 pane.taskPathVal.setText(selTask.getScriptPath().toString());
                 table.taskTableView.setMouseTransparent(true);
             });
+            ContextMenu menuOnClick = new ContextMenu();
+            menuOnClick.getItems().addAll(addDefinedTask, remDefinedTask, edtDefinedTask);
+            return menuOnClick;
         }
 
 
