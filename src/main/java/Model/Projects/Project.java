@@ -2,6 +2,7 @@ package Model.Projects;
 
 import Model.Projects.Publications.Publication;
 
+import java.io.Serializable;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;

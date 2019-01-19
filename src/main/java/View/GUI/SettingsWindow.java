@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-
 import static javafx.stage.Modality.APPLICATION_MODAL;
 
 public class SettingsWindow {
@@ -33,7 +32,11 @@ public class SettingsWindow {
         Pane root = new VBox();
         table.create(tasks);
         pane.create();
-        root.getChildren().addAll(pane.box, table.taskTableView);
+        Button applyButton = new Button("Apply");
+        applyButton.setOnAction(e -> controller.saveSettings());
+        Button cancelButton = new Button("Cancel");
+        cancelButton.setOnAction(e -> controller.restoreSettings());
+        root.getChildren().addAll(pane.box, table.taskTableView, applyButton, cancelButton);
         Scene scene = new Scene(root, 400,400);
         settingsStage.setTitle("Processing task settings");
         settingsStage.initModality(APPLICATION_MODAL);
