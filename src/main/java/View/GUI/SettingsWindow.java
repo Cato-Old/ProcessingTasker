@@ -32,11 +32,21 @@ public class SettingsWindow {
         Pane root = new VBox();
         table.create(tasks);
         pane.create();
+        Button okButton = new Button("OK");
+        okButton.setOnAction(evt->{
+            controller.saveSettings();
+            settingsStage.close();
+        });
         Button applyButton = new Button("Apply");
-        applyButton.setOnAction(e -> controller.saveSettings());
+        applyButton.setOnAction(evt -> {
+            controller.saveSettings();
+        });
         Button cancelButton = new Button("Cancel");
-        cancelButton.setOnAction(e -> controller.restoreSettings());
-        root.getChildren().addAll(pane.box, table.taskTableView, applyButton, cancelButton);
+        cancelButton.setOnAction(evt -> {
+            controller.restoreSettings();
+            settingsStage.close();
+        });
+        root.getChildren().addAll(pane.box, table.taskTableView, okButton, applyButton, cancelButton);
         Scene scene = new Scene(root, 400,400);
         settingsStage.setTitle("Processing task settings");
         settingsStage.initModality(APPLICATION_MODAL);
