@@ -18,13 +18,14 @@ import static javafx.stage.Modality.APPLICATION_MODAL;
 public class SettingsWindow {
     private Controller controller;
 
-    Stage settingsStage; TaskTable table; EditPane pane; MenuOnClick contextMenu;
+    Stage settingsStage; TaskTable table; EditPane pane; MenuOnClick contextMenu; DownMenu downMenu;
 
     public SettingsWindow(Controller controller){
         this.controller = controller;
         table = new TaskTable();
         pane = new EditPane();
         contextMenu = new MenuOnClick();
+        downMenu = new DownMenu();
     }
 
     public void create(List<ProcessTask> tasks){
@@ -32,21 +33,8 @@ public class SettingsWindow {
         Pane root = new VBox();
         table.create(tasks);
         pane.create();
-        Button okButton = new Button("OK");
-        okButton.setOnAction(evt->{
-            controller.saveSettings();
-            settingsStage.close();
-        });
-        Button applyButton = new Button("Apply");
-        applyButton.setOnAction(evt -> {
-            controller.saveSettings();
-        });
-        Button cancelButton = new Button("Cancel");
-        cancelButton.setOnAction(evt -> {
-            controller.restoreSettings();
-            settingsStage.close();
-        });
-        root.getChildren().addAll(pane.box, table.taskTableView, okButton, applyButton, cancelButton);
+        downMenu.create();
+        root.getChildren().addAll(pane.box, table.taskTableView, downMenu.box);
         Scene scene = new Scene(root, 400,400);
         settingsStage.setTitle("Processing task settings");
         settingsStage.initModality(APPLICATION_MODAL);
@@ -57,6 +45,32 @@ public class SettingsWindow {
     public void update(List<ProcessTask> tasks){
         table.update(tasks);
 
+    }
+
+    class DownMenu{
+        HBox box;
+
+        void create(){
+            Button okButton = new Button("OK");
+            okButton.setMinWidth(100);
+            okButton.setOnAction(evt->{
+                controller.saveSettings();
+                settingsStage.close();
+            });
+            Button appButton = new Button("Apply");
+            appButton.setMinWidth(100);
+            appButton.setOnAction(evt -> {
+                controller.saveSettings();
+            });
+            Button cnlButton = new Button("Cancel");
+            cnlButton.setMinWidth(100);
+            cnlButton.setOnAction(evt -> {
+                controller.restoreSettings();
+                settingsStage.close();
+            });
+            this.box = new HBox(okButton, appButton, cnlButton);
+
+        }
     }
 
     class TaskTable{
