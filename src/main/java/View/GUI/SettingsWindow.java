@@ -4,6 +4,8 @@ import Controller.Controller;
 import Model.Tasks.ProcessTask;
 import View.View;
 import javafx.beans.property.SimpleObjectProperty;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
@@ -51,6 +53,7 @@ public class SettingsWindow {
         HBox box;
 
         void create(){
+            this.box = new HBox();
             Button okButton = new Button("OK");
             okButton.setMinWidth(100);
             okButton.setOnAction(evt->{
@@ -68,7 +71,10 @@ public class SettingsWindow {
                 controller.restoreSettings();
                 settingsStage.close();
             });
-            this.box = new HBox(okButton, appButton, cnlButton);
+            box.getChildren().addAll(okButton, appButton, cnlButton);
+            box.setSpacing(50);
+            box.setAlignment(Pos.CENTER_RIGHT);
+            box.setPadding(new Insets(25));
 
         }
     }
