@@ -6,12 +6,19 @@ import View.View;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
+import javafx.scene.shape.StrokeLineCap;
+import javafx.scene.shape.StrokeLineJoin;
+import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
+import org.controlsfx.tools.Borders;
+
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -33,11 +40,13 @@ public class SettingsWindow {
     public void create(List<ProcessTask> tasks){
         settingsStage = new Stage();
         Pane root = new VBox();
+        root.setPadding(new Insets(25));
+        Pane wrappedRoot = (Pane) Borders.wrap(root).lineBorder().color(Color.BLACK).title("Process list").buildAll();
         table.create(tasks);
         pane.create();
         downMenu.create();
         root.getChildren().addAll(pane.box, table.taskTableView, downMenu.box);
-        Scene scene = new Scene(root, 400,400);
+        Scene scene = new Scene(wrappedRoot, 600,600);
         settingsStage.setTitle("Processing task settings");
         settingsStage.initModality(APPLICATION_MODAL);
         settingsStage.setScene(scene);
@@ -112,7 +121,7 @@ public class SettingsWindow {
     }
 
     class EditPane{
-        HBox box;
+        GridPane box;
 
         ProcessTask selTask;
         TextField taskNameVal; TextField taskPathVal;
@@ -146,9 +155,16 @@ public class SettingsWindow {
                 selTask = null;
             });
             clearAndDisable();
-            this.box = new HBox(taskNameLab, taskNameVal,
-                                taskPathLab, taskPathVal,
-                                okTaskButton, cancelButton);
+            okTaskButton.setMinWidth(100);
+            cancelButton.setMinWidth(100);
+            List<Node> nodes = Arrays.asList(taskNameLab, taskNameVal, okTaskButton,
+                                             taskPathLab, taskPathVal, cancelButton);
+            this.box = new GridPane();
+            box.getChildren().addAll(nodes);
+            for (int i = 0, row = 0, col = 0; i < nodes.size(); i++, row = i / 3, col = i % 3) {
+                GridPane.setConstraints(nodes.get(i), col, row);
+            }
+
         }
 
         private void clearAndDisable(){
