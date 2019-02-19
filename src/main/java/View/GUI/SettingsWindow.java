@@ -11,10 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import javafx.scene.shape.StrokeLineCap;
-import javafx.scene.shape.StrokeLineJoin;
-import javafx.scene.shape.StrokeType;
 import javafx.stage.Stage;
 import org.controlsfx.tools.Borders;
 
@@ -41,7 +37,12 @@ public class SettingsWindow {
         settingsStage = new Stage();
         Pane root = new VBox();
         root.setPadding(new Insets(25));
-        Pane wrappedRoot = (Pane) Borders.wrap(root).lineBorder().color(Color.BLACK).title("Process list").buildAll();
+        Pane wrappedRoot = (Pane) Borders
+                .wrap(root)
+                .lineBorder()
+                .color(Color.BLACK)
+                .title("Process list")
+                .buildAll();
         table.create(tasks);
         pane.create();
         downMenu.create();

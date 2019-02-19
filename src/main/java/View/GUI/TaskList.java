@@ -37,6 +37,7 @@ public class TaskList {
             stopingTaskQueue.setPrefWidth(200);
             runningTaskQueue.setOnAction(e ->{
                 controller.runTaskQueue();
+                runningTaskQueue.setDisable(true);
             });
             HBox.setHgrow(runningTaskQueue, ALWAYS);
             HBox.setHgrow(stopingTaskQueue, ALWAYS);
@@ -59,6 +60,9 @@ public class TaskList {
     }
 
     public void update(List<ProcessTask> tasks) {
+        if (tasks.size() == 0) {
+            menu.runningTaskQueue.setDisable(false);
+        }
         list.getItems().removeIf(Objects::nonNull);
         list.getItems().addAll(tasks);
     }
