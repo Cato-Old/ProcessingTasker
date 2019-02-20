@@ -39,6 +39,9 @@ public class TaskList {
                 controller.runTaskQueue();
                 runningTaskQueue.setDisable(true);
             });
+            stopingTaskQueue.setOnAction(e -> {
+                controller.stopTaskQueue();
+            });
             HBox.setHgrow(runningTaskQueue, ALWAYS);
             HBox.setHgrow(stopingTaskQueue, ALWAYS);
             this.box = new HBox(runningTaskQueue, stopingTaskQueue);
